@@ -41,7 +41,7 @@ docker stop <container id>
 
 Deploy to Kube, exposed via NodePort
 ```
-kubectl deploy -f kube-stateful-app.yaml
+kubectl apply -f kube-stateful-app.yaml
 ```
 
 Let's see if session affinity is working
