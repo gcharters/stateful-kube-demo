@@ -1,6 +1,8 @@
-# stateful-kube-demo
+# A Stateful Open Liberty application in Kubernetes
 
-Demo a stateful Liberty app in Kubernetes (because lots of apps are stateful).  The core Sessions/Hazelcast application is derived from the Open Liberty Guide on Sessions.
+Demo a stateful Liberty app in Kubernetes (because lots of apps are stateful).  The first part shows in-memory session replication using Hazelcast.  There is no session affinity.  The second part adds nginx Ingress to provide session affinity based on the JSESSIONID Cookie.
+
+The core Sessions/Hazelcast application is derived from the Open Liberty Guide on Sessions.
 
 The following instructions were tested on Docker for Mac.
 
@@ -24,6 +26,11 @@ docker run -p9080:9080 stateful-app:1.0-SNAPSHOT
 Make a request
 ```
 curl http://localhost:9080/stateful-app/cart
+```
+
+Alternatively you can use the OpenAPI UI by pointing your browser at
+```
+http://localhost:9080/openapi/ui/
 ```
 
 Stop in Docker
