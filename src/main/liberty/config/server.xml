@@ -31,6 +31,10 @@
         <file name="${hazelcast.lib}" />
     </library>
 
+    <transaction 
+      transactionLogDirectory="${server.output.dir}/tranlog/${env.HOSTNAME}/"
+      recoverOnStartup="true" />
+
     <webApplication location="stateful-app.war" contextRoot="${app.context.root}" />
 
 </server>

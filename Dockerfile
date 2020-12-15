@@ -18,3 +18,5 @@ COPY --chown=1001:0 target/stateful-app.war /config/apps
 COPY --chown=1001:0 target/hazelcast-*.jar /opt/ol/wlp/usr/shared/resources/hazelcast.jar
 
 RUN configure.sh
+
+RUN rm -rf /liberty/output/defaultServer/tranlog
