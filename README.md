@@ -2,7 +2,7 @@
 
 Demo a stateful Liberty app in Kubernetes (because lots of apps are stateful).  The first part shows in-memory session replication using Hazelcast.  There is no session affinity.  The second part adds nginx Ingress to provide session affinity based on the JSESSIONID Cookie.  The third part shows how to externalize the transaction logs such that they can be recovered after a server crash.  Note, this uses StatefulSets to give us fixed hostnames (the Pod name) required for recovery, and a Persistent Volume to store the transaction logs.
 
-***WARNING: the configure here is not suitable for demo purposes to introduce the concepts, but is not sufficient for a production deployment.  For example, the persistent volume is only accessible on a single Node.***
+***WARNING: the configuration here is suitable for demo purposes to introduce the concepts, but is not sufficient for a production deployment.  For example, the persistent volume is only accessible on a single Node.***
 
 The core Sessions/Hazelcast application is derived from the Open Liberty Guide on Sessions.
 
