@@ -48,9 +48,9 @@ kubectl apply -f kube-stateful-app.yaml
 
 Let's see if session affinity is working
 
-Get cookies for a get request and store them.
+Let's put something in the cart
 ```
-curl --cookie-jar cookies.txt http://localhost:31000/stateful-app/cart
+curl --cookie-jar cookies.txt -X POST "http://localhost:31000/stateful-app/cart/Flying%20Saucers&2.34" -H "accept: */*"
 ```
 
 View the coookies
