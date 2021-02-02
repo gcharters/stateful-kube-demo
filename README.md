@@ -8,7 +8,7 @@ The core Sessions/Hazelcast application is derived from the Open Liberty Guide o
 
 The following instructions were tested on Docker for Mac.
 
-## Stateful sessions with Hazelcast in-memory session repliation
+## Stateful sessions with Hazelcast in-memory session replication
 
 Build the app
 ```

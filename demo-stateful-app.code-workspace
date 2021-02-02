@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "stateful.app",
+			"path": "../../../Downloads/mp-starter-test/demo/stateful.app"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}

@@ -1,0 +1,30 @@
+apiVersion: openliberty.io/v1beta1
+kind: OpenLibertyApplication
+metadata:
+  name: stateful-app
+  namespace: default
+  # Annotate to entitle under WebSphere Application Server (for License Service).
+  annotations:
+    productID: "e7daacc46bbe4e2dacd2af49145a4723"
+    productName: "IBM WebSphere Application Server"
+    productMetric: "VIRTUAL_PROCESSOR_CORE"
+    productChargedContainers: "All"
+spec:
+  applicationImage: gcharters/stateful-app:1.0-SNAPSHOT
+  replicas: 3
+  service:
+    type: ClusterIP
+    port: 9080
+  # Create Ingress and configure for sticky sessions.
+  expose: true
+  route:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/affinity: "cookie"
+      nginx.ingress.kubernetes.io/session-cookie-name: "JSESSIONID"
+  # Create PersistentVolume and PersistentVolumeClaims to store tran logs.
+  # This also causes the deployment to be done as a StatefulSet so the sames storage
+  # can be picked up when the container is restarted.
+  storage:
+    size: 2M
+    mountPath: /output/tranlog

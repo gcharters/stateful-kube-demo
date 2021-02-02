@@ -1,0 +1,12 @@
+apiVersion: openliberty.io/v1beta1
+kind: OpenLibertyApplication
+metadata:
+  name: stateful-app
+  namespace: default
+spec:
+  applicationImage: gcharters/stateful-app:1.0-SNAPSHOT
+  replicas: 3
+  service:
+    type: NodePort
+    nodePort: 31000
+    port: 9080
