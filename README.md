@@ -8,6 +8,15 @@ The core Sessions/Hazelcast application is derived from the Open Liberty Guide o
 
 The following instructions were tested on Docker for Mac.
 
+## Setup
+
+This demo has been tested using Kube in Docker Desktop.
+
+Install the Liberty Operator as described here: https://github.com/OpenLiberty/open-liberty-operator/tree/master/deploy/releases/0.7.1 (this was the latest release at the time)
+
+Session affinity requires an ingress controller that supports it.  The demo uses NGINX, the instructions for installation are here: https://kubernetes.github.io/ingress-nginx/deploy/#docker-desktop
+
+
 ## Stateful sessions with Hazelcast in-memory session replication
 
 Build the app
